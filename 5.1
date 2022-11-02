@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+class CTest
+{
+private:
+    int m_nValue;
+public:
+    CTest()
+    {
+        m_nValue = 0;
+        cout << "Default constructor called" << endl;
+    }
+    CTest(int nValue)
+    {
+        m_nValue = nValue;
+        cout << "Constructor with int argument called" << endl;
+    }
+    CTest(float fValue)
+    {
+        m_nValue = (int)fValue;
+        cout << "Constructor with float argument called" << endl;
+    }
+    void Display()
+    {
+        cout << "The value of the object is " << m_nValue << endl;
+    }
+};
