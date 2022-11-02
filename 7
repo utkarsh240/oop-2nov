@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+class Rupees
+{
+    float r;
+    public:
+    void get()
+    {
+        cout<<"Enter the amount in Rupees: ";
+        cin>>r;
+    }
+    friend class Dollar;
+};
+
+class Dollar
+{
+    float d;
+    public:
+    void convert(Rupees r)
+    {
+        d=r.r/80;
+    }
+    void display()
+    {
+        cout<<"The amount in Dollar is: "<<d;
+    }
+};
+
+int main()
+{
+    Rupees r;
+    Dollar d;
+    r.get();
+    d.convert(r);
+    d.display();
+    return 0;
+}
